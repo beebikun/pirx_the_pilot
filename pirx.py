@@ -4,13 +4,18 @@ import random
 import sys
 import os
 
+"""
+WIDTH - размер игровой карты. Можно указать и меньшее значение,
+но если указывать бОльшее значение - "карта поедет" из-за того,
+что номера столбцов и строк будут занимать более одного места
+"""
+WIDTH = 9
 clear_console = 'clear' if os.name == 'posix' else 'CLS'
 
 MAP_VALUES = {'0': 'red', '1': 'green', '2': 'yellow', '3': 'blue',
               '4': 'magenta', '5': 'cyan', '6': 'white', '7': 'crimson',
               '8': 'black', '9': 'red', 'A': 'green', 'B': 'black',
               'C': 'blue', 'D': 'magenta', 'E': 'cyan', 'F': 'gray'}
-WIDTH = 9
 
 COLORS = dict(
     gray=('\033[1;30m', '\033[1;m'),
@@ -290,5 +295,5 @@ class PirxThePilot(object):
         return self._move(dif)
         return dif
 
-
+#Начинаем игру
 Game(WIDTH)
